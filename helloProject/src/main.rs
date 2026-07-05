@@ -1,13 +1,10 @@
 fn main() {
-    let s1 = String::from("RUST");
-    let len = calculate_length(&s1);
-    println!("The length is: {}, s1 is: {}", s1, len);
-}
-
-fn print_lost(s: &String) {
-    println!("The lost string is: {}", &s1);
-}
-
-fn calculate_length(s: &String) -> usize {
-    s.len()
+    let mut _x = 5;
+    println!("x is: {}", _x);
+    let _r = &mut _x;
+    println!("r is: {}", _r);
+    *_r += 1;
+    println!("r is: {}", _r);
+    *_r += 3;
+    println!("r is: {}", _r);
 }
