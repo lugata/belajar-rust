@@ -1,41 +1,54 @@
 #![allow(warnings)]
-
-use std::result;
 fn main() {
-    // let mut counter = 0;
-    // let mut remaining = 10;
+    let rect = (10, 20);
 
-    // let result = loop {
-    //     counter += 1;
-    //     remaining -= 1;
-
-    //     if remaining == 0 {
-    //         break counter * 2;
-    //     }
-    //     if counter > 5 {
-    //         break counter * 3;
-    //     }
-    // };
-    // println!("Counter: {}", counter);
-    // println!("The result is {}", result);
-
-    let mut number = 3;
-    while number != 0 {
-        println!("{}!", number);
-        number -= 1;
-        break;
-    }
-    println!("LIFTOFF!!!");
-
-    let a = [10, 20, 30, 40, 50];
-
-    let b = ["a", "b", "c", "d", "e"];
-
-    for element in a {
-        println!("The value is: {}", element);
+    struct Book {
+        title: String,
+        author: String,
+        year: u32,
+        pages: u32,
+        available: bool,
     }
 
-    for element in b {
-        println!("The value is: {}", element);
+    struct User {
+        username: String,
+        email: String,
+        sign_in_count: u32,
+        active: bool,
     }
+
+    let mut user1 = User {
+        username: String::from("john_doe"),
+        email: String::from("john.doe@example.com"),
+        sign_in_count: 0,
+        active: true,
+    };
+
+    // user1.email = String::from("another@email.com");
+    println!("User1 Email: {}", user1.email);
+
+    fn build_user(email: String, username: String) -> User {
+        User {
+            email,
+            username,
+            sign_in_count: 1,
+            active: true,
+        }
+    }
+
+    let user2 = User {
+        email: String::from("jane.smith@example.com"),
+        ..user1
+    };
+    println!("User2 Email: {}", user2.email);
+
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
+
+    let black = Color(0, 0, 0);
+    let green = Color(0, 255, 0);
+
+    struct AlwaysEqual;
+
+    let subject = AlwaysEqual;
 }
