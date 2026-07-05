@@ -1,54 +1,38 @@
-#![allow(warnings)]
 fn main() {
-    let rect = (10, 20);
+    // fn route(ip_kind: IpAddrKind) {}
 
-    struct Book {
-        title: String,
-        author: String,
-        year: u32,
-        pages: u32,
-        available: bool,
+    // route(four);
+    // route(six);
+    #[derive(Debug)]
+    enum IpAddrKind {
+        V4(u8, u8, u8, u8),
+        V6(String),
     }
 
-    struct User {
-        username: String,
-        email: String,
-        sign_in_count: u32,
-        active: bool,
-    }
+    // let home = IpAddrKind::V4(String::from("127.0.0.1"));
+    // let loopback = IpAddrKind::V6(String::from("::1"));
 
-    let mut user1 = User {
-        username: String::from("john_doe"),
-        email: String::from("john.doe@example.com"),
-        sign_in_count: 0,
-        active: true,
-    };
+    let _home = IpAddrKind::V4(127, 0, 0, 1);
+    let _loopback = IpAddrKind::V6(String::from("::1"));
 
-    // user1.email = String::from("another@email.com");
-    println!("User1 Email: {}", user1.email);
+    println!("Home IP Address: {:?}", _home);
+    println!("Loopback IP Address: {:?}", _loopback);
 
-    fn build_user(email: String, username: String) -> User {
-        User {
-            email,
-            username,
-            sign_in_count: 1,
-            active: true,
-        }
-    }
+    // let four = IpAddrKind::V4;
+    // let six = IpAddrKind::V6;
 
-    let user2 = User {
-        email: String::from("jane.smith@example.com"),
-        ..user1
-    };
-    println!("User2 Email: {}", user2.email);
+    // struct IpAddr {
+    //     kind: IpAddrKind,
+    //     address: String,
+    // }
 
-    struct Color(i32, i32, i32);
-    struct Point(i32, i32, i32);
+    // let home = IpAddr {
+    //     kind: four,
+    //     address: String::from("127.0.0.1"),
+    // };
 
-    let black = Color(0, 0, 0);
-    let green = Color(0, 255, 0);
-
-    struct AlwaysEqual;
-
-    let subject = AlwaysEqual;
+    // let loopback = IpAddr {
+    //     kind: six,
+    //     address: String::from("::1"),
+    // };
 }
