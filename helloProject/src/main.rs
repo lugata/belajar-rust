@@ -1,27 +1,41 @@
 #![allow(warnings)]
+
+use std::result;
 fn main() {
-    // let age: u8 = 16;
-    // println!("The value of age is: {}", age);
-    // if age >= 18 {
-    //     println!("You can drive a car.");
-    // } else if age >= 16 {
-    //     println!("You can drive a car with a learner's permit.");
-    // } else {
-    //     println!("You can't drive a car.");
-    // }
+    // let mut counter = 0;
+    // let mut remaining = 10;
 
-    // let number: i32 = 991;
-    // if number % 4 == 0 {
-    //     println!("The number is divisible by 4.");
-    // } else if number % 3 == 0 {
-    //     println!("The number is divisible by 3.");
-    // } else if number % 2 == 0 {
-    //     println!("The number is divisible by 2.");
-    // } else {
-    //     println!("The number is not divisible by 4, 3, or 2.");
-    // }
+    // let result = loop {
+    //     counter += 1;
+    //     remaining -= 1;
 
-    let condition = true;
-    let number = if condition { 5 } else { 6 };
-    println!("The value of number is: {number}");
+    //     if remaining == 0 {
+    //         break counter * 2;
+    //     }
+    //     if counter > 5 {
+    //         break counter * 3;
+    //     }
+    // };
+    // println!("Counter: {}", counter);
+    // println!("The result is {}", result);
+
+    let mut number = 3;
+    while number != 0 {
+        println!("{}!", number);
+        number -= 1;
+        break;
+    }
+    println!("LIFTOFF!!!");
+
+    let a = [10, 20, 30, 40, 50];
+
+    let b = ["a", "b", "c", "d", "e"];
+
+    for element in a {
+        println!("The value is: {}", element);
+    }
+
+    for element in b {
+        println!("The value is: {}", element);
+    }
 }
